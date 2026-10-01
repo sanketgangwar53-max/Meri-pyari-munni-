@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-hand: 'Caveat', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0914;
+    color: #fff;
+    touch-action: manipulation;
+  }
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-serif-romance {
+  font-family: var(--font-serif);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Custom scrollbar for scrollable inner containers */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 10, 25, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 182, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 182, 0.6);
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(25, 18, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 182, 193, 0.15);
+}
+
+.glass-panel-warm {
+  background: rgba(35, 20, 38, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 216, 0.2);
+}
+
+.glass-btn {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.25) 0%, rgba(225, 29, 72, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-btn:hover {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.35) 0%, rgba(225, 29, 72, 0.3) 100%);
+  border-color: rgba(244, 114, 182, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -4px rgba(244, 114, 182, 0.3);
+}
+
+.glass-btn:active {
+  transform: scale(0.97);
+}
+
+/* Soft breathing light glow */
+@keyframes warmPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.animate-warm-pulse {
+  animation: warmPulse 6s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
